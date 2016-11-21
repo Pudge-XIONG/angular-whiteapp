@@ -2,7 +2,7 @@ import { Component, OnInit} from "@angular/core";
 import { Configuration } from '../../app.config';
 import { TestService } from '../../services/test-service';
 import {Http} from "@angular/http";
-
+declare  var $:any;
 @Component({
     selector: 'test',
     templateUrl: 'test.html',
@@ -33,6 +33,10 @@ export class TestComponent implements OnInit {
         console.log(this._appConfig.version);
         this.displayRetour = "RETOUR VAR";
         console.log(this.displayRetour);
+        $(function() {
+            console.log("Jquery OK !");
+            $( "[tooltip]" ).tooltip();
+        });
     };
 
     clickFunction() {
