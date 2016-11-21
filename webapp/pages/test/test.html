@@ -1,0 +1,73 @@
+<md-sidenav-layout>
+	<h1>TEST</h1>
+
+	<b>Test link:</b>
+	<br/>
+	<a routerLink="/about" routerLinkActive="active">About</a>
+	<br/><br/>
+
+	<b>Test click:</b>
+	<br/>
+	<b (click)="clickFunction()">Click ({{displayRetour}})</b>
+	<br/>
+	<b (click)="click()">Click</b>
+	<br/><br/>
+
+	<b>Test Translation: ('hello world')</b>
+	<br/>
+	<button class="btn btn-default" (click)="appConfig.language='en'">en</button>
+	&nbsp;
+	<button class="btn btn-default" (click)="appConfig.language='es'">es</button>
+	<br/>
+	{{ 'hello world' | translate }}
+	<br/><br/>
+
+	<b>Test directive (btn-bootstrap):</b>
+	<br/>
+	<button type="button" class="btn btn-default" exDirective>Visit Rangle</button>
+	<br/><br/>
+
+	<b>Test Boostrap (alert):</b>
+	<br/>
+	<div class="alert alert-danger" role="alert">
+	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	  <span class="sr-only">Error:</span>
+	  Enter a valid email address
+	</div>
+
+	<b>Test Jquery:</b>
+	<br/>
+	Dans console, regarder si "Jquery OK!" apparait !!
+	<br/><br/>
+
+	<b>Test Jquery-ui (tooltip):</b>
+	<br/>
+	<b>String:</b><span tooltip title="Test Tooltip">Tooltips</span>
+	<br/>
+	<b>Translate:</b><span tooltip title="{{ 'hello world' | translate }}">Tooltips</span>
+	<br/><br/>
+
+	<b>Test Font-Awesome:</b>&nbsp;<i class="fa fa-id-card" aria-hidden="true"></i>
+	<br/><br/>
+
+	<b>Test @angular/material:</b>
+	<br/>
+	<md-input placeholder="Test input"></md-input>
+	<br/><br/>
+
+	<b>Test @angular/material:</b>
+	<br/>
+	<button md-button (click)="start.open()">Open start sidenav</button>
+	<button md-button (click)="end.open()">Open end sidenav</button>
+	<br/><br/>
+
+	<md-sidenav #start (open)="closeStartButton.focus()">
+	  Start Sidenav.
+	  <br>
+	  <button md-button #closeStartButton (click)="start.close()">Close</button>
+	</md-sidenav>
+	<md-sidenav #end align="end">
+	  End Sidenav.
+	  <button md-button (click)="end.close()">Close</button>
+	</md-sidenav>
+</md-sidenav-layout>
