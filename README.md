@@ -1,7 +1,5 @@
-Angular2 with TypeScript and Gulp
+Angular2 WhiteApp (TypeScript & Gulp)
 =================================
-
-A basic Angular2 application with Gulp as build system.
 
 #### 1. Prerequisites
 
@@ -27,15 +25,19 @@ A basic Angular2 application with Gulp as build system.
 
 > npm i -g ts-node@1.3.0
 
+- angular-cli
+
+> npm i -g angular-cli
+
 #### 2. Cloning the repository
 
 Clone the repository:
 
-> git clone https://github.com/kolorobot/angular2-typescript-gulp.git
+> git clone https://git.aduneo.com/aduneo-whiteapps/angular2-whiteapp.git
 
-Navigate to `angular2-typescript-gulp` directory:
+Navigate to `angular2-whiteapp` directory:
 
-> cd angular2-typescript-gulp
+> cd angular2-whiteapp
 
 #### 3. Installing dependencies
 
@@ -45,23 +47,18 @@ Install dependencies by running the following command:
 
 `node_modules` and `typings` directories will be created during the install.
 
-#### 4. Building the project
-
-Build the project by running the following command:
-
-> npm run clean & npm run build
-
-`build` directory will be created during the build
-
-#### 5. Starting the application
+#### 4. Building & Starting the application
 
 Start the application by running the following command:
 
-> npm start
+> gulp serve
 
 The application will be displayed in the browser.
 
-Resources
----------
+#### 5. Only Building the project
 
-- [A step-by-step tutorial](http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html)
+Build the project by running the following command:
+
+> gulp build
+
+`build` directory will be created during the build
