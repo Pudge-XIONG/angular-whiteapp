@@ -1,73 +1,94 @@
-<md-sidenav-layout>
-	<h1>TEST</h1>
+<h1>TEST</h1>
 
-	<b>Test link:</b>
-	<br/>
-	<a routerLink="/about" routerLinkActive="active">About</a>
-	<br/><br/>
+<b>Test link:</b>
+<br/>
+<a routerLink="/about" routerLinkActive="active">About</a>
+<br/><br/>
 
-	<b>Test click:</b>
-	<br/>
-	<b (click)="clickFunction()">Click ({{displayRetour}})</b>
-	<br/>
-	<b (click)="click()">Click</b>
-	<br/><br/>
+<b>Test click:</b>
+<br/>
+<b (click)="clickFunction()">Click ({{displayRetour}})</b>
+<br/>
+<b (click)="click()">Click</b>
+<br/><br/>
 
-	<b>Test Translation: ('hello world')</b>
-	<br/>
-	<button class="btn btn-default" (click)="appConfig.language='en'">en</button>
-	&nbsp;
-	<button class="btn btn-default" (click)="appConfig.language='es'">es</button>
-	<br/>
-	{{ 'hello world' | translate }}
-	<br/><br/>
+<b>Test Translation: ('gui.noDataFound')</b>
+<br/>
+<button class="btn btn-default" (click)="appConfig.language='en'">en</button>
+&nbsp;
+<button class="btn btn-default" (click)="appConfig.language='fr'">fr</button>
+<br/>
+{{ 'gui.noDataFound' | translate }}
+<br/><br/>
 
-	<b>Test directive (btn-bootstrap):</b>
-	<br/>
-	<button type="button" class="btn btn-default" exDirective>Visit Rangle</button>
-	<br/><br/>
+<b>Test directive (btn-bootstrap):</b>
+<br/>
+<button type="button" class="btn btn-default" exDirective>Visit Rangle</button>
+<br/><br/>
 
-	<b>Test Boostrap (alert):</b>
-	<br/>
-	<div class="alert alert-danger" role="alert">
-	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-	  <span class="sr-only">Error:</span>
-	  Enter a valid email address
-	</div>
+<b>Test Boostrap (alert):</b>
+<br/>
+<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Enter a valid email address
+</div>
 
-	<b>Test Jquery:</b>
-	<br/>
-	Dans console, regarder si "Jquery OK!" apparait !!
-	<br/><br/>
+<b>Test Jquery:</b>
+<br/>
+Dans console, regarder si "Jquery OK!" apparait !!
+<br/><br/>
 
-	<b>Test Jquery-ui (tooltip):</b>
-	<br/>
-	<b>String:</b><span tooltip title="Test Tooltip">Tooltips</span>
-	<br/>
-	<b>Translate:</b><span tooltip title="{{ 'hello world' | translate }}">Tooltips</span>
-	<br/><br/>
+<b>Test Jquery-ui (tooltip):</b>
+<br/>
+<b>String:</b><span tooltip title="Test Tooltip">Tooltips</span>
+<br/>
+<b>Translate:</b><span tooltip title="{{ 'hello world' | translate }}">Tooltips</span>
+<br/><br/>
 
-	<b>Test Font-Awesome:</b>&nbsp;<i class="fa fa-id-card" aria-hidden="true"></i>
-	<br/><br/>
+<b>Test Font-Awesome:</b>&nbsp;<i class="fa fa-id-card" aria-hidden="true"></i>
+<br/><br/>
 
-	<b>Test @angular/material:</b>
-	<br/>
-	<md-input placeholder="Test input"></md-input>
-	<br/><br/>
+<b>Test @angular/material:</b>
+<br/>
+<md-input-container class="">
+	<input mdInput placeholder="Test input">
+	</md-input-container>
+<br/><br/>
 
-	<b>Test @angular/material:</b>
-	<br/>
-	<button md-button (click)="start.open()">Open start sidenav</button>
-	<button md-button (click)="end.open()">Open end sidenav</button>
-	<br/><br/>
-
-	<md-sidenav #start (open)="closeStartButton.focus()">
-	  Start Sidenav.
-	  <br>
-	  <button md-button #closeStartButton (click)="start.close()">Close</button>
-	</md-sidenav>
-	<md-sidenav #end align="end">
-	  End Sidenav.
-	  <button md-button (click)="end.close()">Close</button>
-	</md-sidenav>
-</md-sidenav-layout>
+<b>Test @angular/material:</b>
+<br/>
+<button md-button>Button classic</button>
+<br/><br/>
+<md-sidenav-container class="example-sidenav-fab-container">
+  <md-sidenav #sidenav mode="side" opened="true">
+    <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+      <md-icon>add</md-icon>
+    </button>
+    <div class="example-scrolling-content">
+      Lorem ipsum dolor sit amet, pede a libero aenean phasellus, lectus metus sint ut risus,
+      fusce vel in pellentesque. Nisl rutrum etiam morbi consectetuer tempor magna, aenean nullam
+      nunc id, neque vivamus interdum sociis nulla scelerisque sem, dolor id wisi turpis magna
+      aliquam magna. Risus accumsan hac eget etiam donec sed, senectus erat mattis quam, tempor
+      vel urna occaecat cras, metus urna augue nec at. Et morbi amet dui praesent, nec eu at,
+      ligula ipsum dui sollicitudin, quis nisl massa viverra ligula, mauris fermentum orci arcu
+      enim fringilla. Arcu erat nulla in aenean lacinia ullamcorper, urna ante nam et sagittis,
+      tristique vehicula nibh ipsum vivamus, proin proin. Porta commodo nibh quis libero amet.
+      Taciti dui, sapien consectetuer.
+    </div>
+  </md-sidenav>
+  <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+    <md-icon>add</md-icon>
+  </button>
+  <div class="example-scrolling-content">
+    Lorem ipsum dolor sit amet, pede a libero aenean phasellus, lectus metus sint ut risus, fusce
+    vel in pellentesque. Nisl rutrum etiam morbi consectetuer tempor magna, aenean nullam nunc id,
+    neque vivamus interdum sociis nulla scelerisque sem, dolor id wisi turpis magna aliquam magna.
+    Risus accumsan hac eget etiam donec sed, senectus erat mattis quam, tempor vel urna occaecat
+    cras, metus urna augue nec at. Et morbi amet dui praesent, nec eu at, ligula ipsum dui
+    sollicitudin, quis nisl massa viverra ligula, mauris fermentum orci arcu enim fringilla. Arcu
+    erat nulla in aenean lacinia ullamcorper, urna ante nam et sagittis, tristique vehicula nibh
+    ipsum vivamus, proin proin. Porta commodo nibh quis libero amet. Taciti dui, sapien
+    consectetuer.
+  </div>
+</md-sidenav-container>

@@ -31,7 +31,8 @@ const tsc = require("gulp-typescript");
 const tsProject = tsc.createProject("tsconfig.json");
 const sourcemaps = require('gulp-sourcemaps');
 const tslint = require('gulp-tslint');
-var runSequence = require('gulp-run-sequence');
+var runSequence = require('run-sequence');
+var cssPurge = require('gulp-css-purge');
 /***********************************/
 
 /** Remove build Directory **/
@@ -63,6 +64,7 @@ gulp.task('minify-css', ["compile-less-to-css"], function () {
 gulp.task('build-css', ["minify-css"], function () {
   return gulp.src(dir_temp+"/css/**/*.min.css")
     .pipe(plugins.concatCss("app.min.css"))
+    .pipe(cssPurge())
     .pipe(gulp.dest(dir_hash))
     .pipe(plugins.livereload());
 });
@@ -107,7 +109,8 @@ gulp.task("build-dependencies", () => {
             'zone.js/dist/**',
             'ng2-interceptors/**/*',
             '@angular/**/bundles/**',
-            '@angular/material/**/*'
+            '@angular/material/**/*',
+            'angular2-localstorage/**/*',
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest(dir_hash+"/vendor"))
         .pipe(plugins.livereload());
@@ -128,7 +131,7 @@ gulp.task("create-ts-sourcesmaps", ["tslint"], () => {
     let tsResult = gulp.src(dir_webapp+"/**/*.ts")
         .pipe(plugins.angularEmbedTemplates({basedir: hash, sourceType:'ts'}))
         .pipe(sourcemaps.init())
-        .pipe(tsc(tsProject));
+        .pipe(tsProject());
     return tsResult.js
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(dir_hash));

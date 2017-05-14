@@ -1,6 +1,7 @@
 import {NgModule, Injectable, Component, OnInit, ModuleWithProviders} from '@angular/core';
 import { MaterialModule } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from "@angular/forms";
 import {HttpModule, Http, JsonpModule,
  Request, RequestOptionsArgs, Response, XHRBackend, RequestOptions, ConnectionBackend, Headers} from '@angular/http';
@@ -9,9 +10,9 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import { provideInterceptorService, InterceptorService } from 'ng2-interceptors';
 
-import { TranslateService} from './@aduneo/translate/translate.service';
-import { TranslatePipe} from './@aduneo/translate/translate.pipe';
-import { TRANSLATION_PROVIDERS} from './@aduneo/translate/translate';
+import { TranslateService} from './@jason/translate/translate.service';
+import { TranslatePipe} from './@jason/translate/translate.pipe';
+import { TRANSLATION_PROVIDERS} from './@jason/translate/translate';
 
 import {Configuration, HttpInterceptor} from "./app.config";
 
@@ -36,6 +37,7 @@ declare  var $:any;
     imports: [
         MaterialModule.forRoot(),
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         routing,
         HttpModule,

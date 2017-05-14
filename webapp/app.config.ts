@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { TranslateService } from './@aduneo/translate/translate.service';
+import { TranslateService } from './@jason/translate/translate.service';
 import {HttpModule, Http, JsonpModule,
  Request, RequestOptionsArgs, Response, XHRBackend, RequestOptions, ConnectionBackend, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -17,7 +17,7 @@ export class Configuration {
 	};
 	private _token: string = "";
 
-	public set language(lang:string): void {
+	public set language(lang:string) {
 		this._translate.use(lang);
 	}
 

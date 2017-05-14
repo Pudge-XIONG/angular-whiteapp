@@ -19,13 +19,13 @@ export class TestService {
         return this._http.get("/api/datamodel/schema")
             .map((response: Response) => <Object[]>response.json());
             //.catch(this.handleError);
-    }
+    };
 
     public GetSingle = (id: number): Observable<Object> => {
         return this._http.get("/api/datamodel/schema")
             .map((response: Response) => <Object>response.json());
             //.catch(this.handleError);
-    }
+    };
 
     public Add = (itemName: string): Observable<Object> => {
         let toAdd = JSON.stringify({ ItemName: itemName });
@@ -33,20 +33,20 @@ export class TestService {
         return this._http.post("/api/test", toAdd, { headers: this.headers })
             .map((response: Response) => <any>response.json());
             //.catch(this.handleError);
-    }
+    };
 
     public Update = (id: number, itemToUpdate: Object): Observable<Object> => {
         return this._http.put("/api/test", JSON.stringify(itemToUpdate), { headers: this.headers })
             .map((response: Response) => <Object>response.json());
             //.catch(this.handleError);
-    }
+    };
 
     public Delete = (id: number): Observable<Response> => {
         return this._http.delete("/api/test"); //.catch(this.handleError);
-    }
+    };
 
     private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
-    }
+    };
 };
