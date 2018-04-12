@@ -63,15 +63,11 @@
     "gulp-live-server": "latest",
     "gulp-livereload": "latest",
     "gulp-load-plugins": "latest",
-    
     "gulp-clean-css": "3.2.0",
-
     "gulp-open": "latest",
     "gulp-recess": "latest",
     "gulp-rename": "latest",
-
     "run-sequence": "1.2.2",
-
     "gulp-sourcemaps": "latest",
     "gulp-tslint": "6.1.1",
     "gulp-typescript": "latest",
